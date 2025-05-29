@@ -2,7 +2,11 @@ name: Comment on Pull Request
 
 on:
   pull_request:
-    types: [opened] # Triggers only when a PR is opened
+    types: [opened]
+
+permissions:
+  pull-requests: write  # ✅ Needed to comment on PRs
+  contents: read
 
 jobs:
   comment:
