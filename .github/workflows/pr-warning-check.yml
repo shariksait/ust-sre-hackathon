@@ -21,8 +21,8 @@ jobs:
           output: |
             {
               "title": "Potential recurrence of Incident",
-              "summary": "Action Required: Potential recurrence of Incident INC-2478",
+              "summary": "Action Required: Potential recurrence of Incident INC-2478. Root cause: Missing circuit breaker in payments service. Current change modifies the same module. Please review.",
               "text": "Potential recurrence of Incident INC-2478 (April 2024) detected. Root cause: Missing circuit breaker in payments service. Current change modifies the same module. Please review."
             }
-          action_url: https://github.com/shariksait/ust-sre-hackathon/pull/5
+          action_url: https://github.com/shariksait/ust-sre-hackathon/pull/${{ github.event.pull_request.number }}
           
