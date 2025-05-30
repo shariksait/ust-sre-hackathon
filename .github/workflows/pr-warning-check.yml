@@ -25,5 +25,5 @@ jobs:
               "text": "Potential recurrence of Incident INC-2478 (April 2024) detected. Root cause: Missing circuit breaker in payments service. Current change modifies the same module. Please review."
             }
           action_url: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.pull_request.number }}
- }}
+          
           
