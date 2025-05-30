@@ -1,0 +1,26 @@
+name: PR Warning Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]  # Run on PR changes
+
+permissions:
+  checks: write       # Required to create checks
+  contents: read
+
+jobs:
+  check-warning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set warning if title doesn't follow convention
+        uses: LouisBrunner/checks-action@v1.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: PR Validation
+          conclusion: action_required  # ⚠️ Show warning icon
+          output: |
+            {
+              "title": "Potential recurrence of Incident",
+              "summary": "Action Required: Potential recurrence of Incident INC-2478",
+              "text": "Potential recurrence of Incident INC-2478 (April 2024) detected. Root cause: Missing circuit breaker in payments service. Current change modifies the same module. Please review."
+            }
